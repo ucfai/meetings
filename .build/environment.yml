@@ -1,0 +1,23 @@
+name: sigai_meetings
+channels:
+  - conda-forge
+  - damianavila82
+dependencies:
+  - jupyter=1.0.0
+  - jupyter_core=4.3.0
+  - jupyter_client=5.1.0
+  - jupyter_console=5.1.0
+  - jupyter_latex_envs=1.4.0
+  - jupyter_highlight_selected_word=0.0.11
+  - matplotlib=2.0.2
+  - nbconvert=5.3.1
+  - numpy=1.13.1
+  - pandas=0.20.3
+  - pip=9.0.1
+  - pytables=3.4.2
+  - python=3.6.1
+  - rise=5.1.0
+  - scipy=0.19.1
+  - pip:
+    - tensorflow==1.4.0
+    - pyyaml==3.12

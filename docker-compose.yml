@@ -11,5 +11,7 @@ services:
     ports:
       - 19972:8888
       - 19973:8000
+      - 19974:6006
     volumes:
+      - ./.jupyter:/root/.jupyter
       - .:/srv/sigai

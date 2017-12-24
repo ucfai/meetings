@@ -31,6 +31,8 @@ WORKDIR /srv/sigai
 
 EXPOSE 8888
 EXPOSE 8000
+EXPOSE 6006
 
 ENV PATH /opt/conda/envs/sigai_meetings/bin:$PATH
-CMD ["jupyter notebook --ip=0.0.0.0 --port=8888 --allow-root --NotebookApp.token="]
+CMD ["source activate sigai_meetings"]
+CMD ["jupyter notebook"]

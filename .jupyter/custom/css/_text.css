@@ -1,0 +1,31 @@
+h1 {
+    color: #ffc904 !important;
+    font-family: "PT Sans", sans-serif !important;
+}
+
+*[class^="CodeMirror"] {
+  color: inherit !important;
+}
+
+h2, h3, h4, h5, h6, p, strong, em, ul, ol, li {
+  color: #fafafa !important;
+}
+
+.text-gold {
+    color: #ffc904 !important;
+}
+.text-white {
+    color: #fafafa !important;
+}
+
+div#ucfsigai-mission {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+div#ucfsigai-mission > p {
+  font-size: 3em;
+  font-family: "PT Sans", sans-serif !important;
+}

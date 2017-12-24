@@ -1,59 +1,70 @@
 ## Unit -1
-- unit: -1
-  title: Intros
-  list: 
+- unit:  0
+  title: Overview
+  list:
   - type: Lecture
     date: 01/17
     title: Welcome to SIGAI
+    lecturer: [ionlights, thedibaccle]
   - type: Lecture
     date: 01/24
     title: The Central Notion of AI
+    lecturer: [ionlights, thedibaccle]
 ## Unit 0
-- unit: 0
+- unit:  1
   title: Neural Networks
   list:
   - type: Lecture
     date: 01/31
     title: An Intro to Neural Networks
-  - type: Workshop
+    lecturer: [ionlights]
+  - type: Lab
     date: 02/07
     title: Build a Neural Network
+    lecturer: [ionlights]
 ## Unit 1
-- unit: 1
+- unit:  2
   title: Convolutional Neural Networks
   list:
   - type: Lecture
     date: 02/14
     title: Deconvoluting Convolutional Neural Networks
-  - type: Workshop
+    lecturer: [thedibaccle]
+  - type: Lab
     date: 02/21
     title: Convolving a Neural Network
+    lecturer: [thedibaccle]
   - type: Lecture
     date: 02/28
-    title: "<special/guest lecture>"
+    title: Guest
 ## Unit 2
-- unit: 2
+- unit:  3
   title: Recurrent Neural Networks
   list:
   - type: Lecture
     date: 03/07
     title: Seriously, Neural Networks (RNNs)
-  - type: Workshop
+    lecturer: [ionlights]
+  - type: Lab
     date: 03/21
     title: Timely Predictions
+    lecturer: [ionlights]
   - type: Lecture
     date: 03/28
-    title: "<special/guest lecture>?"
+    title: Guest
 ## Unit 3
-- unit: 3
+- unit:  4
   title: Reinforcement Learning
   list:
   - type: Lecture
     date: 04/04
     title: Can a Machine Learn like a Human? (RL P1)
+    lecturer: [ionlights]
   - type: Lecture
     date: 04/11
     title: Learning like Humans (RL P2)
-  - type: Workshop
+    lecturer: [thedibaccle]
+  - type: Lab
     date: 04/18
     title: Building a Markov Decision Process
+    lecturer: [ionlights]

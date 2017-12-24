@@ -1,4 +1,3 @@
-<style>
 .ucfsigai-brand::before, .ucfsigai-brand::after {
     font-weight: bold;
     font-family: "PT Sans", sans-serif !important;
@@ -11,17 +10,3 @@
     content: "@UCF";
     color: #ffc904;
 }
-.text-gold {
-    color: #ffc904;
-}
-.text-white {
-    color: #fafafa;
-}
-body {
-    background-color: #131c1f !important;
-}
-
-h1 {
-    color: #ffc904 !important;
-}
-</style>

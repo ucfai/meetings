@@ -17,7 +17,7 @@ __maintainer__ = "SIGAI@UCF"
 
 class Semester:
     def __init__(self, semester):
-        self.components_path = ".scripts/components/"
+        self.components_path = "bin/components/"
         self.semester = semester + "/"
         pass
 

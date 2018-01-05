@@ -6,7 +6,7 @@ IF [%1] == []	(
 	SET version = !%ver%%sem!
 )
 ELSE (
-	SET version = %1%
+	SET version = %1
 )
 
 REM Gotta figure out the equivalent batch conditional expresesions. for -v and -p

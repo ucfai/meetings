@@ -9,19 +9,19 @@ FROM tensorflow/tensorflow:1.4.1-gpu-py3
 ENV PATH /notebooks/bin:$PATH
 
 ## Install some extra, left-out, packages
-RUN pip install --no-cache-dir \
+RUN pip install \
       colorlover==0.2.1 \
       nbconvert==5.3.1  \
       plotly==2.0.11    \
+      pyyaml==3.21      \
       RISE==5.1.0       \
       seaborn==0.8.0    \
       tables==3.4.2
 
 # EXPOSE 8000
 
-## Run Jupyter notebook configurations, also configure RISE from `pip`
-RUN jupyter notebook --generate-config \
-    && jupyter-nbextension install rise --py --sys-prefix \
-    && jupyter-nbextension enable  rise --py --sys-prefix
+## Configure RISE from `pip`
+RUN jupyter nbextension install rise --py --sys-prefix && \
+    jupyter nbextension enable  rise --py --sys-prefix
 
 CMD ["jupyter", "notebook"]

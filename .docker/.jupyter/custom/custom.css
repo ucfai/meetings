@@ -4,6 +4,7 @@
 @import url("css/_footer.css");
 @import url("css/_text.css");
 @import url("css/_bootstrap.css");
+@import url("css/_syllabus.css");
 
 div#site {
   height: 100% !important;
@@ -11,6 +12,8 @@ div#site {
 
 body.rise-enabled {
     background-color: #131c1f !important;
+    background-color: #22292b !important;
+    background-color: #242829 !important;
 }
 
 aside.controls {
@@ -59,6 +62,8 @@ section[id^="slide-"] {
   width: calc(100vw - 30px) !important;
   max-width: calc(100vw - 30px) !important;
   height: calc(100vh - 84px) !important;
+  overflow-y: scroll !important;
+  overflow-x: hidden !important;
 }
 
 div.container.slides {

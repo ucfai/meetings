@@ -3,7 +3,7 @@
 if [ -z "$1" ]; then
   ver=$(head -1 .docker/.version);
   sem=$(head -1 .docker/.semester);
-  version="$ver-$sem"
+  version="$sem-$ver"
 else
   version=$1;
 fi

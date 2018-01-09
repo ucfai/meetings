@@ -136,7 +136,7 @@ c.NotebookApp.allow_root = True
 #
 #  This allows adding javascript/css to be available from the notebook server
 #  machine, or overriding individual files in the IPython
-c.NotebookApp.extra_static_paths = ["/srv/sigai"]
+c.NotebookApp.extra_static_paths = ["/notebooks"]
 
 ## Extra paths to search for serving jinja templates.
 #
@@ -199,7 +199,7 @@ c.NotebookApp.ip = '0.0.0.0'
 #c.NotebookApp.nbserver_extensions = {}
 
 ## The directory to use for notebooks and kernels.
-c.NotebookApp.notebook_dir = '/srv/sigai'
+c.NotebookApp.notebook_dir = '/notebooks'
 
 ## Whether to open in a browser after starting. The specific browser used is
 #  platform dependent and determined by the python standard library `webbrowser`

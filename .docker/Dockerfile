@@ -13,7 +13,7 @@ RUN pip install \
       colorlover==0.2.1 \
       nbconvert==5.3.1  \
       plotly==2.0.11    \
-      pyyaml==3.21      \
+      pyyaml==3.12      \
       RISE==5.1.0       \
       seaborn==0.8.0    \
       tables==3.4.2

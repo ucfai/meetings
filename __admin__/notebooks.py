@@ -66,10 +66,10 @@ class Notebooks:
                 nb["cells"].append(name)
 
                 nb_meta = dict(
-                    sem=self.semester,
-                    nb_cont=str(cnt).zfill(2),
-                    nb_type=meet["type"].lower()[:3],
-                    nb_name="-".join(re.findall(r"\w+", meet["name"].lower())),
+                    sem     = self.semester,
+                    nb_cont = str(cnt).zfill(2),
+                    nb_type = meet["type"].lower()[:3],
+                    nb_name = "-".join(re.findall(r"\w+", meet["name"].lower())),
                 )
                 with open(nb_tmpl.substitute(nb_meta), "w") as _:
                     nbf.write(nb, _)

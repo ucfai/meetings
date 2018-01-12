@@ -1,2 +1,3 @@
-.docker/version
 .ipynb_checkpoints
+.DS_Store
+.sass-cache/

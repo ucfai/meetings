@@ -12,16 +12,24 @@ ENV PATH /notebooks/bin:$PATH
 RUN pip install \
       colorlover==0.2.1 \
       nbconvert==5.3.1  \
-      plotly==2.0.11    \
-      pyyaml==3.21      \
+      plotly==2.2.0     \
+      pyyaml==3.12      \
       RISE==5.1.0       \
       seaborn==0.8.0    \
       tables==3.4.2
 
-# EXPOSE 8000
+## Configure SASS, 'cause CSS is a shit-show
+RUN apt-get update \
+    && apt-get install -y \
+      build-essential \
+      iputils-ping \
+      ruby-full \
+      rubygems \
+    && gem install sass --no-user-install
 
 ## Configure RISE from `pip`
 RUN jupyter nbextension install rise --py --sys-prefix && \
     jupyter nbextension enable  rise --py --sys-prefix
 
+# sass --watch /root/.jupyter/custom/sass/:/root/.jupyter/custom/
 CMD ["jupyter", "notebook"]

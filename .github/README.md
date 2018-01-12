@@ -1,6 +1,6 @@
 # SIGAI Meetings
 
-In this repo, you'll find all the SIGAI@UCF lectures and workshops, categorized by semester.
+In this repo, you'll find all the SIGAI@UCF lectures and workshops, categorized by semester. This should also have certain aspects that jive well with our Jekyll site ([ucfsigai.github.io](https://github.com/ucfsigai/ucfsigai.github.io/)).
 
 Table of Contents:
 - [Insallation Instructions](#installation-instructions)

@@ -10,7 +10,7 @@ sem=$(head -1 .docker/.semester);
 #   version=$1;
 # fi
 
-docker run \
+docker run --rm \
   -v $(pwd)/.docker/.jupyter:/root/.jupyter \
   -v $(pwd):/notebooks \
   -p 19972:8888 \

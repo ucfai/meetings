@@ -6,30 +6,40 @@
 FROM tensorflow/tensorflow:1.4.1-gpu-py3
 
 ## Setup the project directory bin
-ENV PATH /notebooks/bin:$PATH
+ENV PATH /notebooks/__admin__:$PATH
+ENV ADMIN /notebooks/__admin__
 
 ## Install some extra, left-out, packages
 RUN pip install \
-      colorlover==0.2.1 \
-      nbconvert==5.3.1  \
-      plotly==2.2.0     \
-      pyyaml==3.12      \
-      RISE==5.1.0       \
-      seaborn==0.8.0    \
+      colorlover==0.2.1                        \
+      jupyter_contrib_nbextensions==0.3.3      \
+      nbconvert==5.3.1                         \
+      plotly==2.2.0                            \
+      pyyaml==3.12                             \
+      RISE==5.1.0                              \
+      seaborn==0.8.0                           \
       tables==3.4.2
 
-## Configure SASS, 'cause CSS is a shit-show
-RUN apt-get update \
-    && apt-get install -y \
-      build-essential \
-      iputils-ping \
-      ruby-full \
-      rubygems \
-    && gem install sass --no-user-install
-
 ## Configure RISE from `pip`
-RUN jupyter nbextension install rise --py --sys-prefix && \
-    jupyter nbextension enable  rise --py --sys-prefix
+RUN    jupyter nbextension install rise --py --sys-prefix \
+    && jupyter nbextension enable  rise --py --sys-prefix \
+    && jupyter contrib nbextension install \
+    && jupyter nbextension enable codefolding/main \
+    && jupyter nbextension enable execute_time/ExecuteTime \
+    && jupyter nbextension enable hide_input/main \
+    && jupyter nbextension enable python-markdown/main \
+    && jupyter nbextension enable toggle_all_line_numbers/main \
+    && jupyter nbextension enable hide_input_all/main \
+    && jupyter nbextension enable splitcell/splitcell \
+    && jupyter nbextension enable exercise2/main \
+    && jupyter nbextension enable code_prettify/code_prettify \
+    && jupyter nbextension enable equation-numbering/main \
+    && jupyter nbextension enable highlighter/highlighter \
+    && jupyter nbextension enable table_beautifier/main
 
+
+
+## Big brother, but for SASS
 # sass --watch /root/.jupyter/custom/sass/:/root/.jupyter/custom/
+
 CMD ["jupyter", "notebook"]

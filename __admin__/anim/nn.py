@@ -9,6 +9,10 @@ import numpy as np
 import itertools
 import colorlover as cl
 
+import os
+os.chdir("..")
+from __admin__.lib.nn import NeuralNetwork
+
 class Layer():
     start = 0
     max_n = 0
@@ -100,46 +104,24 @@ class Network():
 
 
 def network():
-    nn = Network()
-    nn.build()
-    nn.connect()
-
-    # layout = dict(
-    #     xaxis=dict(range=[xm, xM], autorange=False, zeroline=False),
-    #     yaxis=dict(range=[ym, yM], autorange=False, zeroline=False),
-    #     title='Running Through a Neural Network', hovermode='closest',
-    #     updatemenus= [{'type': 'buttons',
-    #                    'buttons': [{'label': 'Play',
-    #                                 'method': 'animate',
-    #                                 'args': [None]}]}]
-    # )
+    # nn = Network()
+    # nn.build()
+    # nn.connect()
 
     sliders_dict = dict(
         active = 0,
-        yanchor = "top",
-        xanchor = "left",
+        yanchor = "top", xanchor = "left",
         currentvalue = dict(
-            font = dict(size=20),
-            prefix = "Year:",
-            visible = True,
-            xanchor = "right",
+            font = dict(size=20), prefix = "Year:",
+            visible = True, xanchor = "right",
         ),
-        transition = dict(
-            duration = 300,
-            easing = "cubic-in-out",
-        ),
-        pad = dict(
-            b = 10,
-            t = 50,
-        ),
-        len = 0.9,
-        x = 0.1,
-        y = 0,
-        steps=[]
+        transition = dict(duration = 300, easing = "cubic-in-out", ),
+        pad = dict(b = 10, t = 50, ),
+        len = 0.9, x = 0.1, y = 0, steps = [],
     )
 
     fig = {}
-    fig["data"  ] = nn.combine()
+    # fig["data"  ] = nn.combine()
     fig["layout"] = {}
     fig["frames"] = []
 
@@ -188,28 +170,22 @@ def network():
 
     # print(nn.weights)
 
-    network_frames = []
-    for stage in stages:
-        frame = {"data": [], "name": stage}
+    # network_frames = []
+    # for stage in stages:
+    #     frame = {"data": [], "name": stage}
 
-    nn_inp = np.array([110, 255, 255, 58])
-    nn_out = np.array([0.05, 0.9, 0.05, 0.0])
+    nn_args = dict(
+        nodes = np.array([4, 6, 5, 7, 4]),
+        inp = np.array([
+                [110, 255],
+                [ 58, 255]
+              ]),
+        out = np.array([0.05, 0.9, 0.05, 0.0]),
+        graphing = True,
+        LR = 0.5,
+    )
+    nn = NeuralNetwork(nn_args)
 
-    nn_weights = {}
-    for x, now_layer in enumerate(nn.layers[:-1]):
-        nxt_layer = nn.layers[x + 1]
-        nn_weights[str(x)] = np.random.normal(0, pow(nxt_layer.n, -0.5), (nxt_layer.n, now_layer.n))
-
-    nn_vec = {"0": np.matmul(nn_weights["0"], nn_inp)}
-    nn_sig = {"0": sigmoid(nn_vec["0"])}
-    for n in range(1, Layer.n_hid):
-        nn_vec[str(n)] = np.matmul(nn_weights[str(n)], nn_sig[str(n - 1)])
-        nn_sig[str(n)] = sigmoid(nn_vec[str(n)])
-
-
-
+    fig["data"] = nn.graph()
 
     return fig
-
-def sigmoid(x, dx=False):
-    return x * (1 - x) if dx else 1 / (1 + np.exp(-x))

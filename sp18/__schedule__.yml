@@ -1,68 +1,94 @@
 ## Unit -1
 - unit:  0
   name: Overview
+  desc: >
+    We'll introduce some changes to SIGAI that we've been planning since last semsester.
   list:
   - type: Lecture
-    date: 01/24
-    name: Welcome to SIGAI
+    date: 01/25
+    name: Welcome back to SIGAI
     inst: [ionlights, thedibaccle]
-  - type: Lecture
-    date: 01/31
-    name: The Central Notion of AI
-    inst: [ionlights, thedibaccle]
+    desc: >
+      This lecture will cover some administrative aspects of SIGAI, introduce the club to newcomers, and then we'll talk about one of the central notions of how Neural Networks are able to accomplish what they do.
 ## Unit 0
 - unit:  1
   name: Neural Networks
+  desc: >
+
   list:
   - type: Lecture
-    date: 02/07
+    date: 02/01
     name: An Intro to Neural Networks
     inst: [ionlights]
+    desc: >
+
   - type: Lab
-    date: 02/14
+    date: 02/08
     name: Building an Extensible Neural Network
     inst: [ionlights]
+    desc: >
+
 ## Unit 1
 - unit:  2
   name: Convolutional Neural Networks
+  desc: >
+
   list:
   - type: Lecture
-    date: 02/21
+    date: 02/15
     name: Deconvoluting Convolutional Neural Networks
     inst: [thedibaccle]
+    desc: >
+
   - type: Lab
-    date: 02/28
+    date: 02/22
     name: Convolving a Neural Network
     inst: [thedibaccle]
+    desc: >
   - type: Lecture
-    date: 03/07
+    date: 03/01
     name: Guest
     inst: Guest
+    desc: >
+
 ## Unit 2
 - unit:  3
   name: Recurrent Neural Networks
+  desc: >
+
   list:
   - type: Lecture
-    date: 03/21
+    date: 03/08
     name: Seriously, Neural Networks (RNNs)
     inst: [ionlights]
+    desc: >
+
   - type: Lab
-    date: 03/28
+    date: 03/15
     name: Timely Predictions
     inst: [ionlights]
+    desc: >
+
 ## Unit 3
 - unit:  4
   name: Reinforcement Learning
+  desc: >
+
   list:
   - type: Lecture
-    date: 04/04
+    date: 03/22
     name: Can a Machines Learn from Experience? (RL P1)
     inst: [ionlights]
+    desc: >
+
   - type: Lecture
-    date: 04/11
+    date: 03/29
     name: Learning from Experience (RL P2)
     inst: [thedibaccle]
+    desc: >
+
   - type: Lab
-    date: 04/28
+    date: 04/05
     name: Building a Markov Decision Process
     inst: [ionlights]
+    desc: >

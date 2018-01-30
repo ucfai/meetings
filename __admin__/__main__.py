@@ -53,10 +53,19 @@ class Semester:
             components = dict(
                 syllabus     = Syllabus,
                 coordinators = Coordinators,
+                notebooks    = Notebooks,
             )
             if not component in ["notebooks"] and os.path.isfile(f):
                 if not accept:
                     overwrite = input("You're about to overwrite `{}`. Are you sure? [y/N] ".format(f)) == "y"
+                if overwrite or accept:
+                    components[component](self.gen)._new()
+                    print("Successfully (re)generated `{}`.".format(f))
+                else:
+                    print("You didn't want to overwrite anything; so I didn't. Bye! :D")
+            else:
+                if not accept:
+                    overwrite = input("You're about to overwrite all the notebooks in `{}`. Are you sure? [y/N] ".format(self.semester)) == "y"
                 if overwrite or accept:
                     components[component](self.gen)._new()
                     print("Successfully (re)generated `{}`.".format(f))
@@ -82,10 +91,10 @@ class Semester:
 
             # if os.path.isfile(f):
             if not accept:
-                overwrite = input("You're about to overwrite `{}`. Are you sure? [y/N] ".format(f)) == "y"
+                overwrite = input("You're about to overwrite `{}`. Are you sure? [y/N] ".format(component)) == "y"
             if overwrite or accept:
                 components[component](self.gen)._update()
-                print("Successfully (re)generated `{}`.".format(f))
+                print("Successfully (re)generated `{}`.".format(component))
             else:
                 print("You didn't want to overwrite anything; so I didn't. Bye! :D")
 

@@ -3,7 +3,6 @@
 
 ## TensorFlow's GPU image is based on Ubuntu 16.04 LTS
 ## It's also built here: https://github.com/tensorflow/tensorflow/blob/b43d0f3c98140edfebb8295ea4a4b661e2fc2a85/tensorflow/tools/docker/Dockerfile.gpu
-# FROM tensorflow/tensorflow:1.4.1-gpu-py3
 FROM tensorflow/tensorflow:1.4.1-py3
 
 ## Setup the project directory bin

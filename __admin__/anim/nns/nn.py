@@ -1,5 +1,3 @@
-from IPython.display import display, HTML
-
 import plotly.offline as py
 py.init_notebook_mode(connected=True)
 import plotly.graph_objs as go
@@ -11,7 +9,7 @@ import colorlover as cl
 
 import os
 os.chdir("..")
-from __admin__.lib.nn import NeuralNetwork
+from __admin__.lib.algos.nn import NeuralNetwork
 
 class Layer():
     start = 0

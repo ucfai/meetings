@@ -1,17 +1,32 @@
 #!/bin/bash
 
-if [ -z "$1" ]; then
-  ver=$(head -1 .docker/.version);
-  sem=$(head -1 .docker/.semester);
-  version="$ver-$sem"
-else
-  version=$1;
-fi
+sem=$(head -1 .docker/.semester);
 
-docker run \
-  -v $(pwd)/.docker/.jupyter:/root/.jupyter \
-  -v $(pwd):/notebooks \
-  -p 19972:8888 \
-  -p 19973:6006 \
-  -p 19974:8000 \
-  ucfsigai/meetings:$version
+ARGS=""
+
+## We default to CPU because the majority of laptops don't have a discrete GPU
+## and TensorFlow 1.4.1, GPU edition, doesn't support running without a GPU.
+case "$1" in
+    "cpu" | "")
+        tags="meetings:$sem-cpu"
+        ARGS="$ARGS -v $(pwd):/notebooks"
+        ARGS="$ARGS -p 19972:8888 -p 19973:6006 -p 19974:8000"
+        ;;
+    "gpu")
+        tags="meetings:$sem-gpu"
+        ARGS="$ARGS --runtime=nvidia"
+        ARGS="$ARGS -v $(pwd):/notebooks"
+        ARGS="$ARGS -p 19972:8888 -p 19973:6006 -p 19974:8000"
+        ;;
+    "sass")
+        tags="meetings-sass-monitor:$sem"
+        ;;
+    *)
+        echo "You specified an un-acceptable parameter: '$1'. Please try again."
+        ;;
+esac
+
+## Launching the container
+printf "\n\n------ Launching: 'ucfsigai/$tags' -----\n"
+printf "  - If this is wrong, send 'Ctrl-C' to stop the container.\n\n"
+docker run -v "$(pwd)/.docker/.jupyter:/root/.jupyter" $ARGS --rm "ucfsigai/$tags"

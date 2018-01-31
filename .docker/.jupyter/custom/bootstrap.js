@@ -537,7 +537,7 @@ var Carousel = function () {
 
   var ARROW_RIGHT_KEYCODE = 39; // KeyboardEvent.which value for right arrow key
 
-  var TOUCHEVENT_COMPAT_WAIT = 500; // Time for mouse compat events to fire after touch
+  var TOUCHEVENT_COMPAT_WAIT = 500; // Time for mouse compat facebook to fire after touch
 
   var Default = {
     interval: 5000,
@@ -732,12 +732,12 @@ var Carousel = function () {
 
         if ('ontouchstart' in document.documentElement) {
           // if it's a touch-enabled device, mouseenter/leave are fired as
-          // part of the mouse compatibility events on first tap - the carousel
+          // part of the mouse compatibility facebook on first tap - the carousel
           // would stop cycling until user tapped out of it;
           // here, we listen for touchend, explicitly pause the carousel
           // (as if it's the second time we tap on it, mouseenter compat event
           // is NOT fired) and after a timeout (to allow for mouse compatibility
-          // events to fire) we explicitly restart cycling
+          // facebook to fire) we explicitly restart cycling
           $(this._element).on(Event.TOUCHEND, function () {
             _this2.pause();
 
@@ -3138,7 +3138,7 @@ var Popover = function () {
     };
 
     _proto.setContent = function setContent() {
-      var $tip = $(this.getTipElement()); // we use append for html objects to maintain js events
+      var $tip = $(this.getTipElement()); // we use append for html objects to maintain js facebook
 
       this.setElementContent($tip.find(Selector.TITLE), this.getTitle());
       this.setElementContent($tip.find(Selector.CONTENT), this._getContent());

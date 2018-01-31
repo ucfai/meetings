@@ -1,0 +1,139 @@
+## Unit 0
+- unit: 0
+  name: "[Artificial] Neural Networks (ANNs)"
+  desc: >
+    Starting with the basics, this is your bread-and-butter with modern machine
+    learning in industry and research.
+  list:
+  - type: Lecture
+    date: 02/01
+    name: "Welcome back to SIGAI, featuring Gradient Descent"
+    inst: [ionlights, thedibaccle]
+    desc: >
+      This lecture will cover some administrative aspects of SIGAI, introduce
+      the club to newcomers, and then we'll talk about how Neural Networks are
+      able to converge.
+    fb: 131223037688707
+    yt: "" 
+  - type: Lecture
+    date: 02/08
+    name: "An Intro to Neural Networks (ANNs)"
+    inst: [ionlights]
+    desc: >
+      Here, we'll dive, head first, into the nitty-gritty of Neural Networks,
+      how they work, what Gradient Descent achieves for them, and how Neural
+      Networks act on the feedback that Gradient Descent derives.
+    fb: "" 
+    yt: ""
+  - type: Lab
+    date: 02/15
+    name: "Building an Extensible ANN"
+    inst: [ionlights]
+    desc: >
+      Enough talking, here you'll learn how to build a Neural Network that can
+      expand to as many layers as you desire. We'll be using TensorFlow for
+      this. You don't need to download anything if you followed along at the
+      first meeting. If not, check out the video on YouTube.
+    fb: ""
+    yt: ""
+    
+## Unit 1
+- unit: 1
+  name: "Convolutional Neural Networks (CNNs)"
+  desc: >
+    CNNs have been instrumental is the progress Computer Vision has achieved in
+    the last decade. They're extremely powerful networks, but also
+    computationally expensive.
+  list:
+  - type: Lecture
+    date: 02/22
+    name: "Deconvoluting Convolutional Neural Networks"
+    inst: [thedibaccle]
+    desc: >
+
+    fb: ""
+    yt: ""
+  - type: Lab
+    date: 03/01
+    name: "Convolving a Neural Network"
+    inst: [thedibaccle]
+    desc: >
+
+    fb: ""
+    yt: ""
+  - type: Lecture
+    date: 03/08
+    name: "Guest"
+    inst: Guest
+    desc: >
+      TBD
+    fb: ""
+    yt: ""
+
+## Unit 2
+- unit: 2
+  name: "Recurrent Neural Networks (RNNs)"
+  desc: >
+    RNNs are an awesome breed of ANNs. They're able to act on sequential data
+    (think speech, or even this wall of text) and make predictions, categorized
+    sentiment, and a multitude of other tasks.
+  list:
+  - type: Lecture
+    date: 03/22
+    name: "Seriously, Neural Networks"
+    inst: [ionlights]
+    desc: >
+      We'll learn how RNNs work, from their structure all the way to
+      Back-Propogation Through Time (BPTT) then focus on a particularly
+      good breed of RNN known as the LSTM (Long-Short Term Memory).
+    fb: ""
+    yt: ""
+  - type: Lab
+    date: 03/29
+    name: "Do We Need Linus Anymore?"
+    inst: [ionlights]
+    desc: >
+      Ever wanted to pitch in to the Linux Kernel?! Well, we're gonna try. Using
+      the current Linux Kernel, we'll generate our own source code - then
+      determine if it's good enough to replace Linux's initial author, Linus
+      Torvalds.
+    fb: ""
+    yt: ""
+
+## Unit 3
+- unit: 3
+  name: Reinforcement Learning (RL)
+  desc: >
+    An overarching theme this semester has been building algorithms that take in
+    massive amounts of data, and 'learn' from them. That's rather limiting
+    because open-ended systems don't have the luxury of everything being
+    labeled. Could we build algorithms that can learn like we do?
+  list:
+  - type: Lecture
+    date: 04/05
+    name: "Can a Machine Learn from Experience?"
+    inst: [ionlights]
+    desc: >
+      Reinforcement Learning is a massive topic, so we'll be brushing the
+      surface and covering the central ideas to how we might be able to teach
+      machines to learn from experience.
+    fb: ""
+    yt: ""
+  - type: Lecture
+    date: 04/12
+    name: "Tangent: Let's Learn Dynamic Programming"
+    inst: [thedibaccle]
+    desc: >
+      If we're going to do this, programmatically, its computationally
+      explosive. We'll cover a way around recursion, so that it's not so
+      explosive in nature.
+    fb: ""
+    yt: ""
+  - type: Lab
+    date: 04/19
+    name: "Building a Markov Decision Process"
+    inst: [ionlights]
+    desc: >
+      Under Construction
+    fb: ""
+    yt: ""

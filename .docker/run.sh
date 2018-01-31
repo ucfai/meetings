@@ -9,13 +9,13 @@ ARGS=""
 case "$1" in
     "cpu" | "")
         tags="meetings:$sem-cpu"
-        ARGS="$ARGS -v $(pwd):/notebooks -v $(pwd)/.docker/.jupyter:/root/.jupyter"
+        ARGS="$ARGS -v $(pwd):/notebooks"
         ARGS="$ARGS -p 19972:8888 -p 19973:6006 -p 19974:8000"
         ;;
     "gpu")
         tags="meetings:$sem-gpu"
         ARGS="$ARGS --runtime=nvidia"
-        ARGS="$ARGS -v $(pwd):/notebooks -v $(pwd)/.docker/.jupyter:/root/.jupyter"
+        ARGS="$ARGS -v $(pwd):/notebooks"
         ARGS="$ARGS -p 19972:8888 -p 19973:6006 -p 19974:8000"
         ;;
     "sass")
@@ -29,4 +29,4 @@ esac
 ## Launching the container
 printf "\n\n------ Launching: 'ucfsigai/$tags' -----\n"
 printf "  - If this is wrong, send 'Ctrl-C' to stop the container.\n\n"
-docker run $ARGS --rm "ucfsigai/$tags"
+docker run -v "$(pwd)/.docker/.jupyter:/root/.jupyter" $ARGS --rm "ucfsigai/$tags"

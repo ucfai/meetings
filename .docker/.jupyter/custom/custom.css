@@ -5700,8 +5700,20 @@ body.rise-enabled {
     max-width: calc(100vw - 30px) !important;
     height: calc(100vh - 84px) !important; }
   body.rise-enabled h1 {
+    font-size: 2em;
+    font-weight: bold;
     color: #ffc904 !important;
     font-family: "PT Sans", sans-serif !important; }
+  body.rise-enabled h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: "PT Sans", sans-serif !important; }
+  body.rise-enabled h3 {
+    font-size: 1.25em;
+    color: #ffc904 !important;
+    font-family: "PT Sans", sans-serif !important; }
+  body.rise-enabled p {
+    font-size: 1em; }
   body.rise-enabled *[class^="CodeMirror"] {
     color: inherit !important; }
   body.rise-enabled h2, body.rise-enabled h3, body.rise-enabled h4, body.rise-enabled h5, body.rise-enabled h6, body.rise-enabled p, body.rise-enabled strong, body.rise-enabled em, body.rise-enabled ul, body.rise-enabled ol, body.rise-enabled li {
@@ -5718,6 +5730,11 @@ body.rise-enabled {
   body.rise-enabled div#ucfsigai-mission > p {
     font-size: 3em;
     font-family: "PT Sans", sans-serif !important; }
+  body.rise-enabled div.massive-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: calc(100vh - 175px); }
   body.rise-enabled .ucfsigai-brand::before, body.rise-enabled .ucfsigai-brand::after {
     font-weight: bold;
     font-family: "PT Sans", sans-serif !important; }

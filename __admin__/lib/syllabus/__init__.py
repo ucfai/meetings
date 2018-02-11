@@ -73,7 +73,7 @@ class Syllabus(Manager):
         print("---- Done generating from template: `syllabus/page.html` ----")
 
         # Write Syllabus to HTML file to be rendered in Jupyter Notebooks
-        with open(self.gen_path + "syllabus.html", "w") as _:
+        with open(self.gen_path + "assets/syllabus.html", "w") as _:
             _.write(syll.safe_substitute(dict(syllabus=render)))
 
         print("---- Done writing `syllabus/page.html` ----")

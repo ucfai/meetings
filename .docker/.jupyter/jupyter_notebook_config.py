@@ -136,7 +136,10 @@ c.NotebookApp.allow_root = True
 #
 #  This allows adding javascript/css to be available from the notebook server
 #  machine, or overriding individual files in the IPython
-c.NotebookApp.extra_static_paths = ["/notebooks"]
+c.NotebookApp.extra_static_paths = [
+    "/notebooks",
+    "/notebooks/__admin__/lib/anims",
+]
 
 ## Extra paths to search for serving jinja templates.
 #

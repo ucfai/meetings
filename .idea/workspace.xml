@@ -2,29 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31ab0aa2-ba6e-4c71-b49f-15a7ade5b897" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/__admin__/lib/anims/vivus.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sp18/assets/coordinators.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sp18/assets/nns/bkp.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sp18/assets/nns/io.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sp18/assets/syllabus.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sp18/assets/vivus.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sp18/vivus.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.docker/.jupyter/custom/custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/.jupyter/custom/custom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.docker/.jupyter/jupyter_notebook_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/.jupyter/jupyter_notebook_config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__admin__/anim/nns/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/__admin__/anim/nns/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__admin__/lib/syllabus/fb_group-sp18.afdesign" beforeDir="false" afterPath="$PROJECT_DIR$/__admin__/lib/syllabus/fb_group-sp18.afdesign" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sp18/01-lec-an-intro-to-neural-networks-anns.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/sp18/01-lec-an-intro-to-neural-networks-anns.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sp18/Untitled.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sp18/__admin__.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sp18/__admin__.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sp18/assets/images/01-lec-an-intro-to-neural-networks-anns.png" beforeDir="false" afterPath="$PROJECT_DIR$/sp18/assets/images/01-lec-an-intro-to-neural-networks-anns.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sp18/assets/images/02-lab-building-an-extensible-ann.png" beforeDir="false" afterPath="$PROJECT_DIR$/sp18/assets/images/02-lab-building-an-extensible-ann.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sp18/assets/images/event-sp18-lec01.afdesign" beforeDir="false" afterPath="$PROJECT_DIR$/sp18/assets/images/event-sp18-lec01.afdesign" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sp18/assets/images/event-sp18-mp1.png" beforeDir="false" afterPath="$PROJECT_DIR$/sp18/assets/images/event-sp18-mp1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sp18/assets/images/group-sp18.png" beforeDir="false" afterPath="$PROJECT_DIR$/sp18/assets/images/group-sp18.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sp18/coordinators.html" beforeDir="false" afterPath="$PROJECT_DIR$/sp18/coordinators.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sp18/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/sp18/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sp18/syllabus.html" beforeDir="false" afterPath="$PROJECT_DIR$/sp18/syllabus.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__admin__/lib/algos/nn.py" beforeDir="false" afterPath="$PROJECT_DIR$/__admin__/lib/algos/nn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__admin__/lib/manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/__admin__/lib/manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__admin__/lib/syllabus/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__admin__/lib/syllabus/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__admin__/lib/syllabus/inst.html" beforeDir="false" afterPath="$PROJECT_DIR$/__admin__/lib/syllabus/inst.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__admin__/lib/syllabus/meet.html" beforeDir="false" afterPath="$PROJECT_DIR$/__admin__/lib/syllabus/meet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sp18/02-lab-building-an-extensible-ann.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/sp18/02-lab-building-an-extensible-ann.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sp18/assets/images/03-lec-deconvoluting-convolutional-neural-networks.png" beforeDir="false" afterPath="$PROJECT_DIR$/sp18/assets/images/03-lec-deconvoluting-convolutional-neural-networks.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sp18/assets/images/event-sp18.afdesign" beforeDir="false" afterPath="$PROJECT_DIR$/sp18/assets/images/event-sp18.afdesign" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sp18/assets/syllabus.html" beforeDir="false" afterPath="$PROJECT_DIR$/sp18/assets/syllabus.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,60 +23,31 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/__admin__/lib/coordinators/__init__.py">
+        <entry file="file://$PROJECT_DIR$/__admin__/lib/syllabus/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="21" selection-start-column="21" selection-end-column="21" />
+            <state relative-caret-position="262">
+              <caret line="69" column="54" selection-start-line="69" selection-start-column="54" selection-end-line="69" selection-end-column="54" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/__admin__/anim/nns/index.html">
+      <file leaf-file-name="nn.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/__admin__/lib/algos/nn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2535">
-              <caret line="169" selection-start-line="169" selection-end-line="169" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fwd.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sp18/assets/nns/fwd.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="230" column="6" selection-start-line="230" selection-start-column="6" selection-end-line="230" selection-end-column="6" />
+            <state relative-caret-position="423">
+              <caret line="140" lean-forward="true" selection-start-line="140" selection-end-line="140" />
               <folding>
-                <element signature="n#style#0;n#g#0;n#g#0;n#svg#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#g#1;n#g#0;n#svg#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#g#2;n#g#0;n#svg#0;n#body#0;n#!!top" expanded="true" />
+                <element signature="e#0#23#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bkp.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sp18/assets/nns/bkp.html">
+      <file leaf-file-name="__sched__.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sp18/__sched__.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="458">
-              <caret line="254" column="22" lean-forward="true" selection-start-line="254" selection-start-column="22" selection-end-line="254" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="jupyter_notebook_config.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.docker/.jupyter/jupyter_notebook_config.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2100">
-              <caret line="140" column="29" selection-start-line="140" selection-start-column="29" selection-end-line="140" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vivus.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/__admin__/lib/anims/vivus.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="10" />
+            <state>
+              <caret column="7" selection-start-column="7" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -138,8 +96,6 @@
         <option value="$PROJECT_DIR$/__admin__/lib/notebooks/__init__.py" />
         <option value="$PROJECT_DIR$/.docker/run.sh" />
         <option value="$PROJECT_DIR$/sp18/__sched__.yml" />
-        <option value="$PROJECT_DIR$/__admin__/lib/syllabus/__init__.py" />
-        <option value="$PROJECT_DIR$/__admin__/lib/manager.py" />
         <option value="$PROJECT_DIR$/sp18/assets/coordinators.html" />
         <option value="$PROJECT_DIR$/sp18/coordinators.html" />
         <option value="$PROJECT_DIR$/sp18/syllabus.html" />
@@ -150,6 +106,10 @@
         <option value="$PROJECT_DIR$/sp18/assets/nns/io.html" />
         <option value="$PROJECT_DIR$/sp18/assets/nns/fwd.html" />
         <option value="$PROJECT_DIR$/sp18/assets/nns/bkp.html" />
+        <option value="$PROJECT_DIR$/__admin__/lib/manager.py" />
+        <option value="$PROJECT_DIR$/__admin__/lib/syllabus/meet.html" />
+        <option value="$PROJECT_DIR$/__admin__/lib/syllabus/__init__.py" />
+        <option value="$PROJECT_DIR$/__admin__/lib/algos/nn.py" />
       </list>
     </option>
   </component>
@@ -159,10 +119,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="515" />
-    <option name="width" value="80" />
-    <option name="height" value="22" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="y" value="22" />
+    <option name="width" value="1680" />
+    <option name="height" value="1028" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -172,6 +132,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -200,6 +161,24 @@
             <path>
               <item name="_meetings" type="b2602c69:ProjectViewProjectNode" />
               <item name="_meetings" type="462c0819:PsiDirectoryNode" />
+              <item name="__admin__" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="_meetings" type="b2602c69:ProjectViewProjectNode" />
+              <item name="_meetings" type="462c0819:PsiDirectoryNode" />
+              <item name="__admin__" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="_meetings" type="b2602c69:ProjectViewProjectNode" />
+              <item name="_meetings" type="462c0819:PsiDirectoryNode" />
+              <item name="__admin__" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="algos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="_meetings" type="b2602c69:ProjectViewProjectNode" />
+              <item name="_meetings" type="462c0819:PsiDirectoryNode" />
               <item name="sp18" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -213,13 +192,12 @@
               <item name="_meetings" type="462c0819:PsiDirectoryNode" />
               <item name="sp18" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="nns" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -271,16 +249,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1680" height="1028" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="22" width="1680" height="1028" extended-state="0" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32967034" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2014652" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32929516" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2771673" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -308,18 +285,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sp18/assets/nns/fwd.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3960">
-          <caret line="264" column="44" selection-start-line="264" selection-start-column="44" selection-end-line="264" selection-end-column="44" />
-          <folding>
-            <element signature="n#style#0;n#g#0;n#g#0;n#svg#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#g#1;n#g#0;n#svg#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#g#2;n#g#0;n#svg#0;n#body#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/__admin__/lib/notebooks/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -453,20 +418,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/__admin__/lib/syllabus/unit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/__admin__/lib/syllabus/inst.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="62" lean-forward="true" selection-start-column="62" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/__admin__/syllabus.py" />
     <entry file="file://$PROJECT_DIR$/__admin__/notebooks.py" />
     <entry file="file://$PROJECT_DIR$/__admin__/coordinators.py" />
@@ -480,13 +431,6 @@
     <entry file="file://$PROJECT_DIR$/__admin__/lib/syllabus/syllabus.py" />
     <entry file="file://$PROJECT_DIR$/__admin__/lib/notebooks/__main__.py" />
     <entry file="file://$PROJECT_DIR$/__admin__/lib/coordinators/__main__.py" />
-    <entry file="file://$PROJECT_DIR$/__admin__/lib/syllabus/page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/__admin__/lib/notebooks/page.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -515,20 +459,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/__admin__/lib/syllabus/meet.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/__admin__/lib/manager.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="67" selection-start-line="67" selection-end-line="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sp18/coordinators.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -543,20 +473,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/__admin__/lib/syllabus/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sp18/__sched__.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="9" selection-start-column="9" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sp18/vivus.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -564,38 +480,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.docker/.jupyter/jupyter_notebook_config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2100">
-          <caret line="140" column="29" selection-start-line="140" selection-start-column="29" selection-end-line="140" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/__admin__/lib/anims/vivus.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/__admin__/lib/coordinators/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="21" selection-start-column="21" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.docker/.jupyter/custom/custom.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="6" lean-forward="true" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/__admin__/anim/nns/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2535">
-          <caret line="169" selection-start-line="169" selection-end-line="169" />
         </state>
       </provider>
     </entry>
@@ -620,22 +508,104 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sp18/assets/nns/fwd.html">
+    <entry file="file://$PROJECT_DIR$/sp18/assets/nns/bkp.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="230" column="6" selection-start-line="230" selection-start-column="6" selection-end-line="230" selection-end-column="6" />
-          <folding>
-            <element signature="n#style#0;n#g#0;n#g#0;n#svg#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#g#1;n#g#0;n#svg#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#g#2;n#g#0;n#svg#0;n#body#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="2572">
+          <caret line="250" column="20" lean-forward="true" selection-start-line="250" selection-start-column="20" selection-end-line="250" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sp18/assets/nns/bkp.html">
+    <entry file="file://$PROJECT_DIR$/sp18/assets/nns/fwd.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="254" column="22" lean-forward="true" selection-start-line="254" selection-start-column="22" selection-end-line="254" selection-end-column="22" />
+        <state relative-caret-position="231">
+          <caret line="230" column="6" selection-start-line="230" selection-start-column="6" selection-end-line="230" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__admin__/anim/nns/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="169" selection-start-line="169" selection-end-line="169" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__admin__/lib/coordinators/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="21" selection-start-column="21" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.docker/.jupyter/jupyter_notebook_config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="140" column="29" selection-start-line="140" selection-start-column="29" selection-end-line="140" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__admin__/lib/anims/vivus.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__admin__/lib/manager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="471">
+          <caret line="75" column="29" lean-forward="true" selection-start-line="75" selection-start-column="29" selection-end-line="75" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sp18/__sched__.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="7" selection-start-column="7" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__admin__/lib/syllabus/page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__admin__/lib/syllabus/unit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__admin__/lib/syllabus/meet.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="48" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__admin__/lib/syllabus/inst.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="61" lean-forward="true" selection-start-column="61" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__admin__/lib/syllabus/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="69" column="54" selection-start-line="69" selection-start-column="54" selection-end-line="69" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__admin__/lib/algos/nn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="140" lean-forward="true" selection-start-line="140" selection-end-line="140" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

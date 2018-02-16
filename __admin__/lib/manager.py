@@ -60,11 +60,11 @@ class Manager(metaclass=abc.ABCMeta):
                              int(date[3:])).strftime(fmt)
 
     def _read_admin(self):
-        ## Open the Admin YAML file, which contains the semester's attendance url
+        ## Open the Admin YAML file
         with open(self.yml["admin"], "r") as _:
             admin = yaml.load(_)
             attend_url = admin["attend_url"]
-            coords = {c["git"]: c["nam"] for c in admin["coords"]}
+            coords = {c["git"]: (c["nam"], c["pos"]) for c in admin["coords"]}
 
         return attend_url, coords
 
@@ -73,7 +73,7 @@ class Manager(metaclass=abc.ABCMeta):
         with open(self.yml["sched"], "r") as _:
             sched = yaml.load(_)
 
-        return sched
+        return sched["units"]
 
     def _gen_titles(self, cnt, meet, ext="ipynb"):
         ## template name for the notebooks in a given semester

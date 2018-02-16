@@ -1,7 +1,15 @@
 ---
-permalink: /meetings/sp18/
+permalink:  /meetings/sp18/
+sem:        sp18
 ---
 
-{% include_relative coordinators.html %}
+<h1 class="text-center display-3"> {{ site.data.conv[page.sem] }} </h1>
+<!-- <hr> -->
 
-{% include_relative syllabus.html %}
+<h2 class="pt-5 pb-2"> Coordinators </h2>
+{% include_relative assets/coordinators.html %}
+
+<!-- <div class="py-5"></div> -->
+
+<h2 class="pt-5 pb-2"> Syllabus </h2>
+{% include_relative assets/syllabus.html %}

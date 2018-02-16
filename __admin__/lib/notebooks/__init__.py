@@ -61,7 +61,7 @@ class Notebooks(Manager):
                 ## https://nbformat.readthedocs.io/en/latest/format_description.html#notebook-metadata
                 if "inst" in m and not ("Guest" in m["inst"]):
                     nb["metadata"]["authors"] = [dict(
-                        name   = coord[git],
+                        name   = coord[git][0],
                         github = git
                     ) for git in m["inst"]]
 

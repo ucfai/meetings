@@ -73,7 +73,7 @@ class Manager(metaclass=abc.ABCMeta):
         with open(self.yml["sched"], "r") as _:
             sched = yaml.load(_)
 
-        return sched
+        return sched["units"]
 
     def _gen_titles(self, cnt, meet, ext="ipynb"):
         ## template name for the notebooks in a given semester

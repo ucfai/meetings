@@ -75,10 +75,8 @@ class NeuralNetwork():
             l_now.run_loss(l_nxt.out_sig if l_nxt.name != "output" else out)
         pass
 
-
     def query(self, inp):
         pass
-
 
     def backquery(self):
         pass

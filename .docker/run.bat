@@ -16,4 +16,4 @@ docker run \
   -p 19972:8888 \
   -p 19973:6006 \
   -p 19974:8000 \
-  ucfsigai/meetings:$version
+  ucfsigai/meetings:$version-cpu

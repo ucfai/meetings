@@ -1,21 +1,15 @@
-@ECHO OFF
+@echo off
 
-IF [%1] == []	(
-	FOR /F %%i in ('head -1 '.version'') DO SET ver = %%i 
-	FOR /F %%i in ('head -1 '.semester'') DO SET sem = %%i
-	SET VERSION = !%ver%%sem%!
-)
-ELSE (
-	SET VERSION = %1
-)
+rem Windows doesn't have support for nvidia-docker2 -- on Feb 22, 2018.
+rem   b/c of this, Windows users can only run TensorFlow's cpu build
+rem NOTE: Coordinators should be using some *nix-based system.
 
+set /p version=<.semester
+set file="cpu"
 
-docker rmi -f "ucfsigai/meetings:$version"
+docker rmi -f "ucfsigai/%@version%-cpu"
 
 docker build \
-  -t "ucfsigai/meetings:$((++version))" \
-  .docker
-
-IF NOT [%VERSION%] = [%1] (
-  ECHO %version% > .docker/version
-)
+    -t "ucfsigai/%@version%-cpu" \
+    -f ".docker/%@file%.Dockerfile" \
+    .docker

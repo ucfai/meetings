@@ -1,5 +1,7 @@
 #!/bin/bash
 
+container_name="ucfsigai_meeting"
+
 sem=$(head -1 .docker/.semester);
 
 ARGS=""
@@ -10,15 +12,16 @@ case "$1" in
     "cpu" | "")
         tags="meetings:$sem-cpu"
         ARGS="$ARGS -v $(pwd):/notebooks"
-        ARGS="$ARGS -p 19972:8888 -p 19973:6006 -p 19974:8000"
+        ARGS="$ARGS -p 19972:8888 -p 19973:6006"
         ;;
     "gpu")
         tags="meetings:$sem-gpu"
         ARGS="$ARGS --runtime=nvidia"
         ARGS="$ARGS -v $(pwd):/notebooks"
-        ARGS="$ARGS -p 19972:8888 -p 19973:6006 -p 19974:8000"
+        ARGS="$ARGS -p 19972:8888 -p 19973:6006"
         ;;
     "sass")
+        container_name="ucfsigai_sassy"
         tags="meetings-sass-monitor:$sem"
         ;;
     *)
@@ -26,7 +29,20 @@ case "$1" in
         ;;
 esac
 
+if [ "$(docker ps -q -f status=running -f name=${container_name})" ]; then
+    docker stop ${container_name}
+fi
+
 ## Launching the container
-printf "\n\n------ Launching: 'ucfsigai/$tags' -----\n"
-printf "  - If this is wrong, send 'Ctrl-C' to stop the container.\n\n"
-docker run -v "$(pwd)/.docker/.jupyter:/root/.jupyter" $ARGS --rm "ucfsigai/$tags"
+printf "\n"
+printf "_____________ Launching: 'ucfsigai/$tags' _____________\n"
+printf "  - This container is running in detached mode. To stop it, type...\n"
+printf "    \`docker stop ucfsigai_meeting\`\n"
+printf "\n"
+docker run \
+    -d \
+    --name ${container_name} \
+    -v "$(pwd)/.docker/.jupyter:/root/.jupyter" \
+    $ARGS \
+    --rm \
+    "ucfsigai/$tags"

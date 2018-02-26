@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Easing Test</title>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <style src="matrix.css"></style>
+    <script src="matrix.js"></script>
+</head>
+<body>
+    <div id="inputMat"><div>
+    <script>
+    /*
+    TODO:
+    input matrix
+    kernel
+    output
+    lines from cells in input matrix to kernel cells. circle shoots into a_(i,j) of output matrix 
+    */
+    var input_data = 
+    {
+        values:
+        [
+            [1, 2, 3, 4, 5],
+            [1, 2, 3, 4, 5],
+            [1, 2, 3, 4, 5],
+            [1, 2, 3, 4, 5],
+            [1, 2, 3, 4, 5]
+        ]
+    };
+
+    var input_options = 
+    {
+        container: "#inputMat",
+        show_labels : false,
+        start_color : '#ffffff',
+        end_color : '#3498db',
+        width: 400,
+        height: 400,
+        margin: {top: 50, right: 50, bottom: 100, left: 100},
+        highlight_cell_on_hover: true,
+        highlight_cell_color: '#2ecc71'
+    };
+
+    Matrix(input_data,input_options);
+
+    </script>
+</body>
+</html>

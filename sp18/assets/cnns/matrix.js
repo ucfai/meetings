@@ -1,6 +1,7 @@
 function Matrix(data, options) {
 
-	var margin = options.margin,
+	var paths = options.paths,
+        margin = options.margin,
 	    width = options.width,
 	    height = options.height,
 	    container = options.container,
@@ -27,7 +28,7 @@ function Matrix(data, options) {
 	var numrows = dataValues.length;
 	var numcols = dataValues[0].length;
 
-	var svg = d3.select(container).append("svg")
+	var svg = d3.select(container).append("g") //from svg to g
 	    .attr("width", width + margin.left + margin.right)
 	    .attr("height", height + margin.top + margin.bottom)
 		.append("g")
@@ -61,6 +62,10 @@ function Matrix(data, options) {
 	    .data(function(d) { return d; })
 		.enter().append("g")
 	    .attr("class", "cell")
+        .attr("id", "dood")
+        .attr("stroke-width", 2)
+        .attr("stroke", "#000000")
+        .attr("fill", "none")
 	    .attr("transform", function(d, i) { return "translate(" + x(i) + ", 0)"; });
 
 	cell.append('rect')
@@ -75,7 +80,11 @@ function Matrix(data, options) {
 	    .attr("text-anchor", "middle")
 	    .style("fill", function(d, i) { return d >= maxValue/2 ? 'white' : 'black'; })
 	    .text(function(d, i) { return d; });
-
+    
+    
+    if(paths)
+        getDestinationCell(cell, paths, x, y, margin);
+    
 	row.selectAll(".cell")
 	    .data(function(d, i) { return dataValues[i]; })
 	    .style("fill", colorMap);
@@ -138,5 +147,21 @@ function Matrix(data, options) {
             .attr("text-anchor", "end")
             .text(function(d, i) { return d; });
     }
+    var exitConds =
+    {
+        x_step: x.rangeBand(),
+        y_step: y.rangeBand(),
+        w : width + margin.left + margin.right,
+        h : height + margin.bottom
+    };
+    return [svg, exitConds];
+}
 
+function getDestinationCell(cell, paths, x, y, margin)
+{
+    cell.append("line")
+        .attr("x1", x.rangeBand()/2)
+        .attr("y1", y.rangeBand()/2)
+        .attr("x2", function(d, i) { return ( (i+.5)*paths[0].matrix.x_step - paths[0].matrix.w - x(i) );})
+        .attr("y2", function(d, i) { return ( (i+1.5)*paths[0].matrix.y_step - paths[0].matrix.h - y(i) + margin.top );});
 }

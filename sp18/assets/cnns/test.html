@@ -1,22 +1,41 @@
 <!doctype html>
-<html lang="ja">
+<html style="height: 100%" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Easing Test</title>
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <style src="matrix.css"></style>
     <script src="matrix.js"></script>
+    <script src="../nns/vivus.js"></script>
+    <style>
+        .newcolor
+        {
+            stroke: "#333333";
+        }
+    </style>
 </head>
-<body>
-    <div id="inputMat"><div>
+<body style="height: 100%" onclick="lolyii();console.log('yis');">
+
+    <svg width="100%" height="100%" id="Mat"></svg>
     <script>
     /*
     TODO:
     input matrix
     kernel
     output
-    lines from cells in input matrix to kernel cells. circle shoots into a_(i,j) of output matrix 
+    lines from cells in kernel matrix to input cells. reverse anim. circle shoots into a_(i,j) of output matrix 
+    
+    maybe make each matrix a g and put them both into an svg?
+    use matrix() for all three matrices, then add svg to contain all of them
+    
+    line path= mat1_cell.coords to mat2_cell.coords
+    
+    
+    
     */
+        
+
+
     var input_data = 
     {
         values:
@@ -31,19 +50,48 @@
 
     var input_options = 
     {
-        container: "#inputMat",
+        container: "#Mat",
         show_labels : false,
         start_color : '#ffffff',
         end_color : '#3498db',
-        width: 400,
-        height: 400,
-        margin: {top: 50, right: 50, bottom: 100, left: 100},
+        width: 250,
+        height: 250,
+        margin: {top: 100, right: 50, bottom: 100, left: 50},
         highlight_cell_on_hover: true,
         highlight_cell_color: '#2ecc71'
     };
 
-    Matrix(input_data,input_options);
+    input_matrix = Matrix(input_data,input_options); //input matrix
+    console.log(input_matrix);
+        
+    var kernel_data =
+    {
+        values:
+        [
+            [0, 1, 0],
+            [1, 1, 1],
+            [0, 1, 0],
 
+        ]
+    };
+    
+    var kernel_options = 
+    {
+        paths: [{type: "OneToOne", matrix: input_matrix[1]}/*,{type: "allToOne", matrix: feature_matrix}*/],
+        container: "#Mat",
+        show_labels : false,
+        start_color : '#ffffff',
+        end_color : '#3498db',
+        width: 150,
+        height: 150,
+        margin: {top: 200, right: 50, bottom: 100, left: 400},
+        highlight_cell_on_hover: true,
+        highlight_cell_color: '#2ecc71'
+    };
+        
+    kernel_matrix = Matrix(kernel_data,kernel_options);
+    var playit = new Vivus("dood").reset();
+    playit.play(2);
     </script>
 </body>
 </html>

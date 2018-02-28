@@ -35,6 +35,7 @@ function Matrix(data, options) {
 	    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 	var background = svg.append("rect")
+        .attr("data-ignore",true)
 	    .style("stroke", "black")
 	    .style("stroke-width", "2px")
 	    .attr("width", width)
@@ -62,19 +63,20 @@ function Matrix(data, options) {
 	    .data(function(d) { return d; })
 		.enter().append("g")
 	    .attr("class", "cell")
-        .attr("id", "dood")
         .attr("stroke-width", 2)
-        .attr("stroke", "#000000")
+        .attr("stroke", "#696969")
         .attr("fill", "none")
 	    .attr("transform", function(d, i) { return "translate(" + x(i) + ", 0)"; });
 
 	cell.append('rect')
+        .attr("data-ignore",true)
 	    .attr("width", x.rangeBand())
 	    .attr("height", y.rangeBand())
 	    .style("stroke-width", 0);
 
     cell.append("text")
 	    .attr("dy", ".32em")
+        .attr("stroke-width", 0)
 	    .attr("x", x.rangeBand() / 2)
 	    .attr("y", y.rangeBand() / 2)
 	    .attr("text-anchor", "middle")
@@ -83,7 +85,18 @@ function Matrix(data, options) {
     
     
     if(paths)
-        getDestinationCell(cell, paths, x, y, margin);
+    {
+        console.log(paths[0].matrix.c - numcols + 1);
+        for(var y_shift = 0; y_shift < paths[0].matrix.r - numrows + 1; y_shift++)
+            for (var x_shift = 0; x_shift < paths[0].matrix.c - numcols + 1; x_shift++)
+            {
+                var mask = cell.append("g")
+                    .attr("class", "f_"+x_shift+"_"+y_shift); /**/
+                
+                createPath(mask, paths, x, y, margin, x_shift, y_shift);
+            }
+        
+    }
     
 	row.selectAll(".cell")
 	    .data(function(d, i) { return dataValues[i]; })
@@ -149,19 +162,36 @@ function Matrix(data, options) {
     }
     var exitConds =
     {
-        x_step: x.rangeBand(),
-        y_step: y.rangeBand(),
+        x: x,
+        y: y,
         w : width + margin.left + margin.right,
-        h : height + margin.bottom
+        h : height + margin.bottom,
+        r : numrows,
+        c : numcols
     };
-    return [svg, exitConds];
+    return exitConds;
 }
 
-function getDestinationCell(cell, paths, x, y, margin)
+function createPath(cellMask, paths, x, y, margin, x_shift, y_shift)
 {
-    cell.append("line")
+    
+    //type: "oneToOne
+    cellMask.append("line")
         .attr("x1", x.rangeBand()/2)
         .attr("y1", y.rangeBand()/2)
-        .attr("x2", function(d, i) { return ( (i+.5)*paths[0].matrix.x_step - paths[0].matrix.w - x(i) );})
-        .attr("y2", function(d, i) { return ( (i+1.5)*paths[0].matrix.y_step - paths[0].matrix.h - y(i) + margin.top );});
+        .attr("x2", function(d, i) { return ( (i+.5+x_shift)*paths[0].matrix.x.rangeBand() - paths[0].matrix.w - x(i) );})
+        .attr("y2", function(d, i) { return ( (i+1.5+y_shift)*paths[0].matrix.y.rangeBand() - paths[0].matrix.h - y(i) + margin.top );});
 }
+
+/*
+paths={type: "onetoone" matrix: input_matrix,}{type: "allToOne" matrix: feature_matrix}
+
+convolve does the element-wise multiplication and takes the summation. output is the value of ith cell
+        .text(function(d, i) { return d; }); 
+        
+        
+*/
+function convolve()
+{
+}
+

@@ -8,7 +8,7 @@ function Matrix(data, options) {
 	    showLabels = options.show_labels,
 	    startColor = options.start_color,
 	    endColor = options.end_color,
-        highlightCellOnHover = options.highlight_cell_on_hover,
+        highlightCellOnActive = options.highlight_cell_on_active,
         highlightCellColor = options.highlight_cell_color;
 
 	var dataValues = data['values'];
@@ -64,7 +64,7 @@ function Matrix(data, options) {
 		.enter().append("g")
 	    .attr("class", "cell")
         .attr("stroke-width", 2)
-        .attr("stroke", "#696969")
+        .attr("stroke", "#ff6969")
         .attr("fill", "none")
 	    .attr("transform", function(d, i) { return "translate(" + x(i) + ", 0)"; });
 
@@ -86,7 +86,7 @@ function Matrix(data, options) {
     
     if(paths)
     {
-        console.log(paths[0].matrix.c - numcols + 1);
+        //console.log(paths[0].matrix.c - numcols + 1);
         for(var y_shift = 0; y_shift < paths[0].matrix.r - numrows + 1; y_shift++)
             for (var x_shift = 0; x_shift < paths[0].matrix.c - numcols + 1; x_shift++)
             {
@@ -102,7 +102,7 @@ function Matrix(data, options) {
 	    .data(function(d, i) { return dataValues[i]; })
 	    .style("fill", colorMap);
 
-    if(highlightCellOnHover){
+    if(highlightCellOnActive){
         cell
         .on("mouseover", function(d) {
             d3.select(this).style("fill", highlightCellColor);
@@ -165,9 +165,10 @@ function Matrix(data, options) {
         x: x,
         y: y,
         w : width + margin.left + margin.right,
-        h : height + margin.bottom,
+        h : height,
         r : numrows,
-        c : numcols
+        c : numcols,
+        svg: svg
     };
     return exitConds;
 }
@@ -179,19 +180,7 @@ function createPath(cellMask, paths, x, y, margin, x_shift, y_shift)
     cellMask.append("line")
         .attr("x1", x.rangeBand()/2)
         .attr("y1", y.rangeBand()/2)
-        .attr("x2", function(d, i) { return ( (i+.5+x_shift)*paths[0].matrix.x.rangeBand() - paths[0].matrix.w - x(i) );})
-        .attr("y2", function(d, i) { return ( (i+1.5+y_shift)*paths[0].matrix.y.rangeBand() - paths[0].matrix.h - y(i) + margin.top );});
-}
-
-/*
-paths={type: "onetoone" matrix: input_matrix,}{type: "allToOne" matrix: feature_matrix}
-
-convolve does the element-wise multiplication and takes the summation. output is the value of ith cell
-        .text(function(d, i) { return d; }); 
-        
-        
-*/
-function convolve()
-{
+        .attr("x2", function(d, i) { return ( (i+.5+x_shift)*paths[0].matrix.x.rangeBand() - paths[0].matrix.w - x(i));})
+        .attr("y2", function(d, i) { return ( (i+1.5+y_shift)*paths[0].matrix.y.rangeBand() - paths[0].matrix.h - y(i) );});
 }
 

@@ -22,33 +22,22 @@
 
     <svg width="100%" height="100%" id="anim"></svg>
     <script>
-    /*
-    TODO:
-    input matrix
-    kernel
-    output
-    lines from cells in kernel matrix to input cells. reverse anim. circle shoots into a_(i,j) of output matrix 
-    
-    maybe make each matrix a g and put them both into an svg?
-    use matrix() for all three matrices, then add svg to contain all of them
-    
-    line path= mat1_cell.coords to mat2_cell.coords
-    
-    
-    
-    */
-        
-
     var y_step = 0, x_step = 0;
+        
+    /*********************************************************************************/  
+    
+        //INPUT MATRIX
+    /*********************************************************************************/
     var input_data = 
     {
         values:
         [
-            [1, 2, 3, 4, 5],
-            [2, 3, 4, 5, 1],
-            [3, 4, 5, 1, 2],
-            [4, 5, 1, 2, 3],
-            [5, 1, 2, 3, 4]
+            [1, 7, 0, 4, 5, 1],
+            [2, 3, 4, 9, 1, 1],
+            [3, 4, 8, 0, 1, 2],
+            [4, 10, 6, 1, 2, 3],
+            [5, 0, 1, 0, 3, 4],
+            [6, 1, 0, 3, 1, 5]
         ]
     };
 
@@ -58,22 +47,27 @@
         show_labels : false,
         start_color : '#ffffff',
         end_color : '#3498db',
-        width: 250,
-        height: 250,
-        margin: {top: 100, right: 50, bottom: 100, left: 50},
-        highlight_cell_on_hover: true,
+        width: 300,
+        height: 300,
+        margin: {top: 50, right: 50, bottom: 100, left: 50},
+        highlight_cell_on_hover: false,
         highlight_cell_color: '#2ecc71'
     };
 
     input_matrix = Matrix(input_data,input_options); //input matrix
-    console.log(input_matrix);
+        
+    /*********************************************************************************/  
+        
+         //KERNEL MATRIX
+    /*********************************************************************************/  
+   
         
     var kernel_data =
     {
         values:
         [
             [0, 1, 0],
-            [1, 1, 1],
+            [1, -1, 1],
             [0, 1, 0],
 
         ]
@@ -88,13 +82,63 @@
         end_color : '#3498db',
         width: 150,
         height: 150,
-        margin: {top: 200, right: 50, bottom: 100, left: 400},
-        highlight_cell_on_hover: true,
+        margin: {top: 300, right: 50, bottom: 100, left: 450},
+        highlight_cell_on_hover: false,
         highlight_cell_color: '#2ecc71'
     };
         
     kernel_matrix = Matrix(kernel_data,kernel_options);
+        
     
+    /*********************************************************************************/  
+    
+        //OUTPUT MATRIX
+    /*********************************************************************************/  
+    var output_data =
+    {
+        values:
+        [
+            [16, 19, 0, 15],
+            [20, 6, 19, 4],
+            [4, 14, 7, 6],
+            [17, 5, 8, 4]
+        ]
+    };
+    
+    var output_options = 
+    {
+        container: "#anim",
+        show_labels : false,
+        start_color : '#ffffff',
+        end_color : '#3498db',
+        width: 200,
+        height: 200,
+        margin: {top: 100, right: 50, bottom: 100, left: 700},
+        highlight_cell_on_active: true,
+        highlight_cell_color: '#2ecc71'
+    };
+        
+    output_matrix = Matrix(output_data,output_options);
+        
+        
+        
+    /*
+paths={type: "onetoone" matrix: input_matrix,}{type: "allToOne" matrix: feature_matrix}
+
+convolve does the element-wise multiplication and takes the summation. output is the value of ith cell
+        .text(function(d, i) { return d; }); 
+        
+gives text of each output cell the value and color, then makes it fade in (css)
+*/
+    function convolve()
+    {
+        
+    }
+        
+    /*********************************************************************************/  
+    
+    //Animation
+    /*********************************************************************************/
     var playit = [];
     var temp;     
         
@@ -111,12 +155,15 @@
         //console.log(pathClasses[i][j].length);
         for (var k = 0; k < pathClasses[i][j].length; k++)
         {
-            temp = new Vivus(pathClasses[i][j][k], {duration: 50}, 
-                            function(){if(this.getStatus() === 'end') this.play(-1);}).stop();
+            temp = new Vivus(pathClasses[i][j][k], {duration: 50, animTimingFunction: Vivus.EASE}, 
+                            function(){if(this.getStatus() === 'end') this.play(-1);}).reset().stop();
             playit[i][j].push(temp);
         }
     }
     }
+        
+        
+    
     
     function next()
     {
@@ -126,6 +173,7 @@
             for(var k = 0; k < pathClasses[0][0].length; k++)
             {
                 playit[y_step][x_step][k].play(1);
+                //convolve(input_matrix.svg.getElementsByClassName("cell"), kernel_matrix.svg.getElementsByClassName("cell"));
             }
             x_step++;
             return;

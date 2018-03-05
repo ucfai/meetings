@@ -58,6 +58,10 @@ class Syllabus(Manager):
                     yt    = self._gen_yturl(m["yt"]),
                 )
 
+                type_html = "<i class=\"far fa-{}\"></i>".format(
+                    "sticky-note" if m["type"] == "Lecture" else "keyboard")
+                subs["type"] = "{1}\n{0}".format(m["type"], type_html)
+
                 meets += meet_tmpl.safe_substitute(subs)
 
                 cnt += 1
@@ -73,7 +77,7 @@ class Syllabus(Manager):
         print("---- Done generating from template: `syllabus/page.html` ----")
 
         # Write Syllabus to HTML file to be rendered in Jupyter Notebooks
-        with open(self.gen_path + "syllabus.html", "w") as _:
+        with open(self.gen_path + "assets/syllabus.html", "w") as _:
             _.write(syll.safe_substitute(dict(syllabus=render)))
 
         print("---- Done writing `syllabus/page.html` ----")

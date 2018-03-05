@@ -1,3 +1,7 @@
+desc: >
+  This semester, we're covering Neural Networks, Convolutional NNs, Recurrent NNs,
+  and finishing off with Reinforcement Learning.
+units:
 ## Unit 0
 - unit: 0
   name: "[Artificial] Neural Networks (ANNs)"
@@ -14,7 +18,7 @@
       the club to newcomers, and then we'll talk about how Neural Networks are
       able to converge.
     fb: 131223037688707
-    yt: "" 
+    yt: ""
   - type: Lecture
     date: 02/08
     name: "An Intro to Neural Networks (ANNs)"
@@ -23,7 +27,7 @@
       Here, we'll dive, head first, into the nitty-gritty of Neural Networks,
       how they work, what Gradient Descent achieves for them, and how Neural
       Networks act on the feedback that Gradient Descent derives.
-    fb: "" 
+    fb: 1818166118245984
     yt: ""
   - type: Lab
     date: 02/15
@@ -34,14 +38,14 @@
       expand to as many layers as you desire. We'll be using TensorFlow for
       this. You don't need to download anything if you followed along at the
       first meeting. If not, check out the video on YouTube.
-    fb: ""
+    fb: 148832122586005
     yt: ""
-    
+
 ## Unit 1
 - unit: 1
   name: "Convolutional Neural Networks (CNNs)"
   desc: >
-    CNNs have been instrumental is the progress Computer Vision has achieved in
+    CNNs have been instrumental in the progress Computer Vision has achieved in
     the last decade. They're extremely powerful networks, but also
     computationally expensive.
   list:
@@ -50,7 +54,7 @@
     name: "Deconvoluting Convolutional Neural Networks"
     inst: [thedibaccle]
     desc: >
-
+      TBD
     fb: ""
     yt: ""
   - type: Lab
@@ -58,7 +62,7 @@
     name: "Convolving a Neural Network"
     inst: [thedibaccle]
     desc: >
-
+      TBD
     fb: ""
     yt: ""
   - type: Lecture

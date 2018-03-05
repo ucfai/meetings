@@ -1,0 +1,173 @@
+<!doctype html>
+<html style="height: 100%" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Easing Test</title>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <style src="matrix.css"></style>
+    <script src="matrix.js"></script>
+    <script src="../nns/vivus.js"></script>
+    <style>
+        svg text {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        pointer-events: none;
+      }
+    </style>
+</head>
+<body style="height: 100%" onclick="">
+
+    <svg width="100%" height="100%" id="anim">
+	<g width="300" height="400">
+	<g transform="translate(50,100)">
+	<rect data-ignore="true" width="200" height="200" style="stroke: black; stroke-width: 2px;">
+	</rect>
+	<g class="row" transform="translate(0,0)">
+	<g class="cell" stroke-width="2" stroke="#ff6969" fill="none" transform="translate(0, 0)" style="fill: rgb(52, 152, 219);">
+	<rect data-ignore="true" width="50" height="50" style="stroke-width: 0;">
+	</rect>
+	<text dy=".32em" stroke-width="0" x="25" y="25" text-anchor="middle" style="fill: black;">
+	16</text>
+	</g>
+	<g class="cell" stroke-width="2" stroke="#ff6969" fill="none" transform="translate(50, 0)" style="fill: rgb(52, 152, 219);">
+	<rect data-ignore="true" width="50" height="50" style="stroke-width: 0;">
+	</rect>
+	<text dy=".32em" stroke-width="0" x="25" y="25" text-anchor="middle" style="fill: black;">
+	19</text>
+	</g>
+	<g class="cell" stroke-width="2" stroke="#ff6969" fill="none" transform="translate(100, 0)" style="fill: rgb(222, 161, 69);">
+	<rect data-ignore="true" width="50" height="50" style="stroke-width: 0;">
+	</rect>
+	<text dy=".32em" stroke-width="0" x="25" y="25" text-anchor="middle" style="fill: black;">
+	0</text>
+	</g>
+	<g class="cell" stroke-width="2" stroke="#ff6969" fill="none" transform="translate(150, 0)" style="fill: rgb(222, 161, 69);">
+	<rect data-ignore="true" width="50" height="50" style="stroke-width: 0;">
+	</rect>
+	<text dy=".32em" stroke-width="0" x="25" y="25" text-anchor="middle" style="fill: black;">
+	15</text>
+	</g>
+	</g>
+	<g class="row" transform="translate(0,50)">
+	<g class="cell" stroke-width="2" stroke="#ff6969" fill="none" transform="translate(0, 0)" style="fill: rgb(52, 152, 219);">
+	<rect data-ignore="true" width="50" height="50" style="stroke-width: 0;">
+	</rect>
+	<text dy=".32em" stroke-width="0" x="25" y="25" text-anchor="middle" style="font-size: 2em;fill: black;">
+	20</text>
+	</g>
+	<g class="cell" stroke-width="2" stroke="#ff6969" fill="none" transform="translate(50, 0)" style="fill: rgb(52, 152, 219);">
+	<rect data-ignore="true" width="50" height="50" style="stroke-width: 0;">
+	</rect>
+	<text dy=".32em" stroke-width="0" x="25" y="25" text-anchor="middle" style="fill: black;">
+	6</text>
+	</g>
+	<g class="cell" stroke-width="2" stroke="#ff6969" fill="none" transform="translate(100, 0)" style="fill: rgb(222, 161, 69);">
+	<rect data-ignore="true" width="50" height="50" style="stroke-width: 0;">
+	</rect>
+	<text dy=".32em" stroke-width="0" x="25" y="25" text-anchor="middle" style="font-size: 2em;fill: black;">
+	19</text>
+	</g>
+	<g class="cell" stroke-width="2" stroke="#ff6969" fill="none" transform="translate(150, 0)" style="fill: rgb(222, 161, 69);">
+	<rect data-ignore="true" width="50" height="50" style="stroke-width: 0;">
+	</rect>
+	<text dy=".32em" stroke-width="0" x="25" y="25" text-anchor="middle" style="fill: black;">
+	4</text>
+	</g>
+	</g>
+	<g class="row" transform="translate(0,100)">
+	<g class="cell" stroke-width="2" stroke="#ff6969" fill="none" transform="translate(0, 0)" style="fill:rgb(69, 228, 103);">
+	<rect data-ignore="true" width="50" height="50" style="stroke-width: 0;">
+	</rect>
+	<text dy=".32em" stroke-width="0" x="25" y="25" text-anchor="middle" style="fill: black;">
+	4</text>
+	</g>
+	<g class="cell" stroke-width="2" stroke="#ff6969" fill="none" transform="translate(50, 0)" style="fill:rgb(69, 228, 103);">
+	<rect data-ignore="true" width="50" height="50" style="stroke-width: 0;">
+	</rect>
+	<text dy=".32em" stroke-width="0" x="25" y="25" text-anchor="middle" style="fill: black;">
+	14</text>
+	</g>
+	<g class="cell" stroke-width="2" stroke="#ff6969" fill="none" transform="translate(100, 0)" style="fill: rgb(243, 69, 12);">
+	<rect data-ignore="true" width="50" height="50" style="stroke-width: 0;">
+	</rect>
+	<text dy=".32em" stroke-width="0" x="25" y="25" text-anchor="middle" style="fill: black;">
+	7</text>
+	</g>
+	<g class="cell" stroke-width="2" stroke="#ff6969" fill="none" transform="translate(150, 0)" style="fill: rgb(243, 69, 12);">
+	<rect data-ignore="true" width="50" height="50" style="stroke-width: 0;">
+	</rect>
+	<text dy=".32em" stroke-width="0" x="25" y="25" text-anchor="middle" style="fill: black;">
+	6</text>
+	</g>
+	</g>
+	<g class="row" transform="translate(0,150)">
+	<g class="cell" stroke-width="2" stroke="#ff6969" fill="none" transform="translate(0, 0)" style="fill:rgb(69, 228, 103);">
+	<rect data-ignore="true" width="50" height="50" style="stroke-width: 0;">
+	</rect>
+	<text dy=".32em" stroke-width="0" x="25" y="25" text-anchor="middle" style="font-size: 2em;fill: black;">
+	17</text>
+	</g>
+	<g class="cell" stroke-width="2" stroke="#ff6969" fill="none" transform="translate(50, 0)" style="fill:rgb(69, 228, 103);">
+	<rect data-ignore="true" width="50" height="50" style="stroke-width: 0;">
+	</rect>
+	<text dy=".32em" stroke-width="0" x="25" y="25" text-anchor="middle" style="fill: black;">
+	5</text>
+	</g>
+	<g class="cell" stroke-width="2" stroke="#ff6969" fill="none" transform="translate(100, 0)" style="fill: rgb(243, 69, 12);">
+	<rect data-ignore="true" width="50" height="50" style="stroke-width: 0;">
+	</rect>
+	<text dy=".32em" stroke-width="0" x="25" y="25" text-anchor="middle" style="font-size: 2em; fill: black;">
+	8</text>
+	</g>
+	<g class="cell" stroke-width="2" stroke="#ff6969" fill="none" transform="translate(150, 0)" style="fill: rgb(243, 69, 12);">
+	<rect data-ignore="true" width="50" height="50" style="stroke-width: 0;">
+	</rect>
+	<text dy=".32em" stroke-width="0" x="25" y="25" text-anchor="middle" style="fill: black;">
+	4</text>
+	</g>
+	</g>
+	</g>
+	</g>
+	<g width="500" height="350">
+	<g transform="translate(350,150)">
+	<rect data-ignore="true" width="100" height="100" style="stroke: black; stroke-width: 2px;">
+	</rect>
+	<g class="row" transform="translate(0,0)">
+	<g class="cell" stroke-width="2" stroke="#ff6969" fill="none" transform="translate(0, 0)" style="fill: rgb(52, 152, 219);">
+	<rect data-ignore="true" width="50" height="50" style="stroke-width: 0;">
+	</rect>
+	<text dy=".32em" stroke-width="0" x="25" y="25" text-anchor="middle" style="fill: black;">
+	20</text>
+	</g>
+	<g class="cell" stroke-width="2" stroke="#ff6969" fill="none" transform="translate(50, 0)" style="fill: rgb(222, 161, 69);">
+	<rect data-ignore="true" width="50" height="50" style="stroke-width: 0;">
+	</rect>
+	<text dy=".32em" stroke-width="0" x="25" y="25" text-anchor="middle" style="fill: black;">
+	19</text>
+	</g>
+	</g>
+	<g class="row" transform="translate(0,50)">
+	<g class="cell" stroke-width="2" stroke="#ff6969" fill="none" transform="translate(0, 0)" style="fill:rgb(69, 228, 103);">
+	<rect data-ignore="true" width="50" height="50" style="stroke-width: 0;">
+	</rect>
+	<text dy=".32em" stroke-width="0" x="25" y="25" text-anchor="middle" style="fill: black;">
+	17</text>
+	</g>
+	<g class="cell" stroke-width="2" stroke="#ff6969" fill="none" transform="translate(50, 0)" style="fill: rgb(243, 69, 12);">
+	<rect data-ignore="true" width="50" height="50" style="stroke-width: 0;">
+	</rect>
+	<text dy=".32em" stroke-width="0" x="25" y="25" text-anchor="middle" style="fill: black;">
+	8</text>
+	</g>
+	</g>
+	</g>
+	</g>
+	</svg>
+	
+	
+    
+</body>
+</html>

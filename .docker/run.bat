@@ -1,19 +1,19 @@
-@ECHO OFF
+@echo off
 
-IF [%1] == []	(
-	FOR /F %%i in ('head -1 '.version'') DO SET ver = %%i 
-	FOR /F %%i in ('head -1 '.semester'') DO SET sem = %%i
-	SET version = !%ver%%sem!
-)
-ELSE (
-	SET version = %1
-)
+rem Windows doesn't have support for nvidia-docker2 -- on Feb 22, 2018.
+rem   b/c of this, Windows users can only run TensorFlow's cpu build
+rem NOTE: Coordinators should be using some *nix-based system.
 
-REM Gotta figure out the equivalent batch conditional expresesions. for -v and -p
+
+set /p version=<.semester
+set container_name="ucfsigai_meeting"
+
 docker run \
-  -v $(pwd)/.docker/.jupyter:/root/.jupyter \
-  -v $(pwd):/notebooks \
-  -p 19972:8888 \
-  -p 19973:6006 \
-  -p 19974:8000 \
-  ucfsigai/meetings:$version
+    -d \
+    --name %@container_name% \
+    -v "$(pwd)/.docker/.jupyter:/root/.jupyter" \
+    -v "$(pwd):/notebooks" \
+    -p 19972:8888 \
+    -p 19973:6006 \
+    --rm \
+    "ucfsigai/%@version%-cpu"

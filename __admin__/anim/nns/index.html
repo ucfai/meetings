@@ -136,12 +136,13 @@
   </svg>
 
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.3/vivus.js"> </script>
+  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.3/vivus.js"> </script>-->
+  <!--<script src="assets/vivus.js"> </script>-->
   <script>
     args = {
       duration: 150,
 
-    }
+    };
 
     // new Vivus("nn-inpt-focus").play()
 
@@ -170,6 +171,8 @@
         case "inh1":
         case "h1h2":
         case "h2ot": weights[status].play(); break;
+
+        case "done": weights["h2ot"].reset(); break;
 
         default: status = "done"; return;
       }

@@ -11,14 +11,15 @@ ENV PATH /notebooks/__admin__:$PATH
 
 ## Install some extra, left-out, packages
 RUN pip install \
-      colorlover==0.2.1                        \
-      jupyter_contrib_nbextensions==0.3.3      \
-      nbconvert==5.3.1                         \
-      plotly==2.2.0                            \
-      pyyaml==3.12                             \
-      RISE==5.1.0                              \
-      seaborn==0.8.0                           \
-      tables==3.4.2
+      colorlover==0.2.1                    \
+      jupyter_contrib_nbextensions==0.3.3  \
+      nbconvert==5.3.1                     \
+      plotly==2.2.0                        \
+      pyyaml==3.12                         \
+      RISE==5.1.0                          \
+      seaborn==0.8.0                       \
+      tables==3.4.2                      ; \
+    pip install jupyter-c-kernel==1.2.2 && install_c_kernel
 
 ## Configure RISE from `pip`
 RUN    jupyter nbextension install rise --py --sys-prefix \

@@ -38,6 +38,21 @@ RUN    jupyter nbextension install rise --py --sys-prefix \
     && jupyter nbextension enable highlighter/highlighter \
     && jupyter nbextension enable table_beautifier/main
 
+RUN    apt-get -y update \
+    && apt-get -y install \
+        build-essential \
+        curl \
+        make \
+        gcc \
+        git \
+        perl \
+    && git clone https://github.com/pjreddie/darknet.git /darknet \
+    && (   cd /darknet \
+        && make \
+        && mv include/* src/ \
+        && rm -rf include .git) \
+    && apt-get -y autoremove \
+    && rm -rf /var/lib/apt/lists/*
 
 
 ## Big brother, but for SASS

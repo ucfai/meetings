@@ -1,3 +1,5 @@
 .ipynb_checkpoints
 .DS_Store
 .sass-cache/
+.Trash-0/
+*.weights

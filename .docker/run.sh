@@ -2,7 +2,7 @@
 
 container_name="ucfsigai_meeting"
 
-sem=$(head -1 .docker/.semester);
+sem=$(head -1 .docker/semester);
 
 ARGS=""
 
@@ -11,14 +11,10 @@ ARGS=""
 case "$1" in
     "cpu" | "")
         tags="meetings:$sem-cpu"
-        ARGS="$ARGS -v $(pwd):/notebooks"
-        ARGS="$ARGS -p 19972:8888 -p 19973:6006"
         ;;
     "gpu")
         tags="meetings:$sem-gpu"
         ARGS="$ARGS --runtime=nvidia"
-        ARGS="$ARGS -v $(pwd):/notebooks"
-        ARGS="$ARGS -p 19972:8888 -p 19973:6006"
         ;;
     "sass")
         container_name="ucfsigai_sassy"
@@ -32,6 +28,10 @@ esac
 if [ "$(docker ps -q -f status=running -f name=${container_name})" ]; then
     docker stop ${container_name}
 fi
+
+ARGS="$ARGS -v $(pwd)/data:/data"
+ARGS="$ARGS -v $(pwd):/notebooks"
+ARGS="$ARGS -p 19972:8888 -p 19973:6006"
 
 ## Launching the container
 printf "\n"

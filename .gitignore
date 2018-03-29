@@ -1,5 +1,9 @@
-.ipynb_checkpoints
+.ipynb_checkpoints/
 .DS_Store
 .sass-cache/
 .Trash-0/
-sp18/data/darknet/yolo.weights
+.idea/
+.vscode/
+data/
+sp18/rnns
+"sp18/rnns copy"

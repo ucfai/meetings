@@ -1,0 +1,15 @@
+rect[class^="node_"] {
+    stroke-width: 2;
+}
+
+rect.node_inp {
+    fill: #48ffd4;
+}
+
+rect.node_hid {
+    fill: #ffe4f0;
+}
+
+rect.node_out {
+    fill: #f1bdf8;
+}

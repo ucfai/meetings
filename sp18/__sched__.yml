@@ -55,7 +55,7 @@ units:
     inst: [thedibaccle]
     desc: >
       TBD
-    fb: ""
+    fb: 559608777730722
     yt: ""
   - type: Lab
     date: 03/01
@@ -63,15 +63,7 @@ units:
     inst: [thedibaccle]
     desc: >
       TBD
-    fb: ""
-    yt: ""
-  - type: Lecture
-    date: 03/08
-    name: "Guest"
-    inst: Guest
-    desc: >
-      TBD
-    fb: ""
+    fb: 154943101886710
     yt: ""
 
 ## Unit 2
@@ -90,7 +82,7 @@ units:
       We'll learn how RNNs work, from their structure all the way to
       Back-Propogation Through Time (BPTT) then focus on a particularly
       good breed of RNN known as the LSTM (Long-Short Term Memory).
-    fb: ""
+    fb: 233361110569700
     yt: ""
   - type: Lab
     date: 03/29

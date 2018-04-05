@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sem=$(head -1 .docker/.semester);
+sem=$(head -1 .docker/semester);
 
 case "$1" in
     "cpu" | "")

@@ -9,7 +9,7 @@ Table of Contents:
 ## Installation Instructions
 To get things up and running, all you need to have Docker installed on your machine.  **(If you don't, see [Dependencies](#dependencies).)** Once you've guaranteed that...
 1. `cd meetings`
-1. `sh .docker/run.sh <semester>` to get the container setup; `<semester>` should take the form... `faXX` for Fall and `spXX` for Spring, `XX` should be the last two digits of the year. (There are build tools, as well; but these are really intended for the coordinators.)
+1. `sh .docker/run.sh` to start the container. (There are build tools, as well; but these are really intended for the coordinators.)
 1. Open `localhost:19972` in your browser and navigate to the semester you'd like to view.
 
 
@@ -17,3 +17,4 @@ To get things up and running, all you need to have Docker installed on your mach
 - [Docker](https://www.docker.com/community-edition)
   - You need a 2011 Macbook Pro or later to run the macOS version of Docker.
   - You need Windows 10 Pro, Education, or Enterprise to run the Windows version of Docker. (More specifically, you need Hyper-V installed on your machine.)
+- If you need help getting setup, head over to [our tutorial](https://ucfsigai.github.io/meetings/workflow/)

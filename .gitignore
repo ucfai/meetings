@@ -5,3 +5,6 @@
 .idea/
 .vscode/
 data/
+
+__pycache__
+*.pyc

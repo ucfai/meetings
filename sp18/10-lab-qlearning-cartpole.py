@@ -1,5 +1,6 @@
 __author__ = "John Muchovej"
 __license__ = "GPLv3.0"
+__name__ = "Overcoming Car Troubles with Q-Learning"
 
 import numpy as np
 
@@ -19,7 +20,7 @@ def run_episode(env, policy=None, render=False):
         if render:
             env.render()
 
-        a,b = obs_to_state(env, obs)
+        a, b = observations2states(env, obs)
         action = env.action_space.sample() if policy is None else policy[a][b]
         
         obs, reward, done, _ = env.step(action)
@@ -29,13 +30,7 @@ def run_episode(env, policy=None, render=False):
             return total_reward
 
 
-def obs_to_state(env, obs):
-    """ Maps an observation to state """
-    env_lo = env.observation_space.low
-    env_hi = env.observation_space.high
-
-    env_dx = (env_hi - env_lo) / n_states
-
+def observations2states(env, obs):
     a = int((obs[0] - env_lo[0]) / env_dx[0])
     b = int((obs[1] - env_lo[1]) / env_dx[1])
 
@@ -43,8 +38,8 @@ def obs_to_state(env, obs):
 
 ################################################################################
 ## states and the actions that can be taken
-n_states = 40
-n_action = 3
+n_states  = 40
+n_actions = 3
 
 ## episodic and temporal limits
 max_iter = 10000
@@ -66,6 +61,19 @@ env = gym.make(env_name)
 env.seed(0)
 np.random.seed(0)
 
+print("Let's describe our environment.")
+print("Spaces:")
+print("- action: {}".format(env.action_space))
+print("- observation: {}".format(env.observation_space))
+print("  - env_lo = {}".format(env.observation_space.low))
+print("  - env_hi = {}".format(env.observation_space.high))
+
+env_lo = env.observation_space.low
+env_hi = env.observation_space.high
+env_dx = (env_hi - env_lo) / n_states
+
+import pdb; pdb.set_trace()
+
 ## initialize the Q table
 q_table = np.zeros((n_states, n_states, n_actions))
 ################################################################################
@@ -80,24 +88,24 @@ for episode in range(max_iter):
     lr = max(lr_min, lr_ini * (0.85 ** (episode // 100)))
 
     for _ in range(max_time):
-    	## make an attempt, and retribe an observation
-        a, b = obs_to_state(env, obs)
+        ## make an attempt, and retribe an observation
+        a, b = observations2states(env, obs)
 
         logits     = q_table[a][b]
         logits_exp = np.exp(logits)
 
         weighted_probs = logits_exp / np.sum(logits_exp)
 
-        exploit = np.random.uniform(0, 1) < epsilon
-        distrib = weighted_probs if exploit else None
-    	action  = np.random.choice(env.action_space.n, p=distrib)
+        explore = np.random.uniform(0, 1) < epsilon
+        distrib = None if explore else weighted_probs
+        action  = np.random.choice(env.action_space.n, p=distrib)
 
         obs, reward, done, _ = env.step(action)
         total_reward += reward
         
         ## we move into the "next timestep", so what is "prev_action" is 
         ## the Q value of the action taken above
-        a_, b_ = obs_to_state(env, obs)
+        a_, b_ = observations2states(env, obs)
 
         ## prior action we took
         prev_action = q_table[a][b][action]
@@ -113,17 +121,19 @@ for episode in range(max_iter):
         if done:
             break
 
-    if episode % 100 == 0:
-        print('iter: {0:5d} | reward: {1:5.5f}.'.format(i + 1, total_reward))
+    if episode % 100 == 0 or episode == max_iter - 1:
+        print('iter: {0:5d} | reward: {1:5.5f}'.format(episode, total_reward))
 
 ################################################################################
 ## Select the best solution
 solution_policy = np.argmax(q_table, axis=2)
+np.set_printoptions(threshold=np.inf, linewidth=120)
+print(solution_policy)
 
 ## Score the solutions
 solution_policy_scores = [run_episode(env, policy=solution_policy) for _ in range(100)]
 
-print("mean(reward): {5.5f}".format(np.mean(solution_policy_scores)))
+print("mean(reward): {0:5.5f}".format(np.mean(solution_policy_scores)))
 
 ## Visualize actions based on the best solution
 run_episode(env, policy=solution_policy, render=True)
